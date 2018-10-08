@@ -11,7 +11,7 @@
 
     <title>
         
-        
+        PU-Learning Medley - undefined
         
     </title>
 
@@ -59,7 +59,7 @@
                     <span>HOME</span>
                 </a>
             </li>
-            <li  class=active >
+            <li >
                 <a href="/tags">
                     <i class="iconfont icon-biaoqian1"></i>
                     <span>TAGS</span>
@@ -88,6 +88,10 @@
         </ul>
     </div>
     
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Reference"><span class="toc-text">Reference</span></a></li></ol>
+</div>
+    
 </div>
 
 
@@ -113,50 +117,42 @@
         
 
 
-<!-- 归档列表 -->
+<div class="post-container">
+    <div class="post-title">
+        PU-Learning Medley
+    </div>
 
-<div class="archives-container">
-
-<div class="one-tag-list">
-                <span class="fa fa-calendar-times-o listing-seperator" id="2018">
-                    <span class="tag-text">2018</span>
-                </span>
-    <ul>
+    <div class="post-meta">
+        <span class="attr">Post：<span>2018-10-08 14:11:41</span></span>
         
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>10-08</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2018/10/08/Positive-Unlabeled-PU-Learning/">
-                        <span>
-                            PU-Learning Medley
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
+        <span class="attr">Tags：/
         
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>10-06</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2018/10/06/structure-learning/">
-                        <span>
-                            structure learning
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
+        <a class="tag" href="/tags/#semi-supervised" title="semi-supervised">semi-supervised</a>
+        <span>/</span>
         
+        <a class="tag" href="/tags/#positive-unlabeled" title="positive-unlabeled">positive-unlabeled</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <p>For classic binary classification problems, learning algorithms mostly need extended features for both positive class and negative class. Unfortunately a significant number of applications involve only positive cases. In regulatory Genomics, researchers found the positive cases through wet lab experiments and large scale post-GWAS analysis leading to extremely high confidence that a SNP (Single Nucleotide Polymorphism) is the functional genome with label as positive. However, for most of time, it is difficult to statistically proof specific genetic factor is NOT a functional one.</p>
+<p>In order to train binary classification models, traditional learning algorithms accept the data unexplored as negative cases and train on them. Undoubtfuly, training set generated in this way is not reliable and potentially causes lots of bias for both training and classification. Thus, we have to get along with unlabeled data and try our best to classify future cases.</p>
+<a id="more"></a>
+<img src="/2018/10/08/Positive-Unlabeled-PU-Learning/pn_ppn_pu.jpg" title="pn-ppn-pu">
+<p>Generally, the rest data (accessible data out of already-known positive cases) are merged to training set as “unlabeled dataset”. Another preprocess frequently used is to apply an <strong>implicit</strong> criterion to generate “negative” data which actually contains both positive and negative cases in it. This filtering criterion is based on domain-specific knowledge that, there will be less positive cases in unlabeled dataset after filtering. This operation makes the unlabeled dataset more close to “pure” negative dataset.</p>
+<h4 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h4><p>[1] Elkan, C., &amp; Noto, K. (2008). Learning classifiers from only positive and unlabeled data (pp. 213–9). Presented at the the 14th ACM SIGKDD international conference, New York, New York, USA: ACM Press.</p>
 
-    </ul>
-</div>
-
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+    </div>
 </div>
     </div>
 </div>
@@ -196,11 +192,30 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
+
+    <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+        */
+        if( '' || '')
+        var disqus_config = function () {
+            this.page.url = '';  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://jamesjacks.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
 
 </html>
